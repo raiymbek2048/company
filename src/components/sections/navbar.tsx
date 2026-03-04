@@ -5,8 +5,6 @@ import { Menu, X } from "lucide-react";
 
 const links = [
   { href: "#about", label: "О нас" },
-  { href: "#showcase", label: "3D" },
-  { href: "#projects", label: "Проекты" },
   { href: "#team", label: "Команда" },
   { href: "#contact", label: "Контакты" },
 ];
@@ -31,13 +29,12 @@ export function Navbar() {
     >
       <a href="#" className="font-mono text-xl font-bold tracking-tight">
         <span className="text-accent-violet">{`{`}</span>
-        freelance
+        bizden
         <span className="text-neon-cyan">.</span>
-        kg
+        tech
         <span className="text-accent-violet">{`}`}</span>
       </a>
 
-      {/* Desktop links */}
       <div className="hidden md:flex gap-9">
         {links.map((link) => (
           <a
@@ -51,7 +48,6 @@ export function Navbar() {
         ))}
       </div>
 
-      {/* Mobile burger */}
       <button
         className="md:hidden text-foreground p-1"
         onClick={() => setOpen(!open)}
@@ -60,7 +56,6 @@ export function Navbar() {
         {open ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Mobile menu */}
       <div
         className={`fixed top-0 right-0 w-72 h-dvh bg-background/97 backdrop-blur-xl border-l border-border flex flex-col items-center justify-center gap-8 transition-transform duration-500 md:hidden ${
           open ? "translate-x-0" : "translate-x-full"

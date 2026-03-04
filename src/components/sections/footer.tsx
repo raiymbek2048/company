@@ -4,13 +4,13 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         <a href="#" className="font-mono text-lg font-bold tracking-tight">
           <span className="text-accent-violet">{`{`}</span>
-          freelance
+          bizden
           <span className="text-neon-cyan">.</span>
-          kg
+          tech
           <span className="text-accent-violet">{`}`}</span>
         </a>
         <p className="text-sm text-muted-foreground">
-          &copy; 2026 freelance.kg. Все права защищены.
+          &copy; 2026 bizden.tech. Все права защищены.
         </p>
       </div>
     </footer>

@@ -28,7 +28,6 @@ export function Contact() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
-          {/* Form */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <input
               type="text"
@@ -67,7 +66,6 @@ export function Contact() {
             </button>
           </form>
 
-          {/* Contact cards */}
           <div className="flex flex-col gap-4">
             <div className="glass rounded-2xl px-6 py-5 flex items-center gap-4">
               <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-gradient-to-br from-accent-violet/15 to-neon-cyan/5 border border-accent-violet/20 text-accent-violet-light shrink-0">
@@ -78,10 +76,10 @@ export function Contact() {
                   Email
                 </span>
                 <a
-                  href="mailto:hello@freelance.kg"
+                  href="mailto:info@bizden.tech"
                   className="font-medium hover:text-accent-violet-light transition-colors"
                 >
-                  hello@freelance.kg
+                  info@bizden.tech
                 </a>
               </div>
             </div>
@@ -110,7 +108,7 @@ export function Contact() {
                   href="#"
                   className="font-medium hover:text-accent-violet-light transition-colors"
                 >
-                  @freelance_kg
+                  @bizden_tech
                 </a>
               </div>
             </div>
