@@ -1,30 +1,17 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { ArrowRight, Globe, Smartphone, BarChart3 } from "lucide-react";
+import { ArrowRight, Globe } from "lucide-react";
 import Image from "next/image";
 
 const projects = [
   {
     icon: Globe,
-    tags: ["Web App", "Стартап"],
+    tags: ["Web App", "Фриланс", "Стартап"],
     title: "Freelance.kg",
-    desc: "Платформа для фрилансеров Кыргызстана. Связываем заказчиков с лучшими специалистами.",
+    desc: "Платформа для фрилансеров Кыргызстана. Связываем заказчиков с лучшими специалистами по всей стране.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=375&fit=crop",
-  },
-  {
-    icon: Smartphone,
-    tags: ["Mobile", "Продукт"],
-    title: "Проект 2",
-    desc: "Описание вашего второго проекта. Расскажите о решённой задаче и результатах.",
-    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=375&fit=crop",
-  },
-  {
-    icon: BarChart3,
-    tags: ["SaaS", "Стартап"],
-    title: "Проект 3",
-    desc: "Описание вашего третьего проекта. Укажите технологии и достигнутые метрики.",
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=375&fit=crop",
+    link: "https://freelance.kg",
   },
 ];
 
@@ -76,7 +63,7 @@ export function Projects() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-1 max-w-xl mx-auto gap-6">
           {projects.map((p, i) => (
             <RevealItem key={p.title} delay={i * 120}>
               <div className="group rounded-2xl overflow-hidden bg-card/50 border border-border hover:border-border/200 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] transition-all duration-300">
@@ -106,10 +93,12 @@ export function Projects() {
                     {p.desc}
                   </p>
                   <a
-                    href="#"
+                    href={p.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-violet-light hover:text-neon-cyan hover:gap-2.5 transition-all"
                   >
-                    Подробнее
+                    Перейти на сайт
                     <ArrowRight size={14} />
                   </a>
                 </div>

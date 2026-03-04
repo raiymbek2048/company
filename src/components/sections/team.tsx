@@ -6,28 +6,28 @@ import CyberneticGridShader from "@/components/ui/cybernetic-grid-shader";
 
 const members = [
   {
-    name: "Toni",
-    role: "Fullstack Developer",
+    name: "Данияр уулу Райымбек",
+    role: "Глава отдела разработки",
     icon: Code,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face",
+    image: "",
   },
   {
-    name: "Щит",
-    role: "Cyber Security",
+    name: "Момунов Кадырмамат",
+    role: "Глава отдела кибербезопасности",
     icon: Shield,
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop&crop=face",
+    image: "",
   },
   {
-    name: "dr.Doom",
-    role: "Analytic / PM",
+    name: "Айдын Маметов",
+    role: "Глава отдела маркетинга",
     icon: LineChart,
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face",
+    image: "",
   },
   {
-    name: "Финч",
-    role: "Юрист",
+    name: "Бексултан Кылычбек",
+    role: "Глава отдела HR и поддержки",
     icon: Scale,
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=200&h=200&fit=crop&crop=face",
+    image: "",
   },
 ];
 
@@ -89,11 +89,17 @@ export function Team() {
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 h-0.5 bg-gradient-to-r from-neon-purple to-neon-cyan opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
                 <div className="relative w-22 h-22 mx-auto mb-5 rounded-full overflow-hidden border-2 border-border">
-                  <img
-                    src={m.image}
-                    alt={m.name}
-                    className="w-full h-full object-cover"
-                  />
+                  {m.image ? (
+                    <img
+                      src={m.image}
+                      alt={m.name}
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-accent-violet/30 to-neon-cyan/20 flex items-center justify-center text-2xl font-bold text-accent-violet-light">
+                      {m.name.split(" ").slice(-1)[0][0]}
+                    </div>
+                  )}
                   <div className="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-accent-violet flex items-center justify-center border-2 border-background">
                     <m.icon size={14} className="text-white" />
                   </div>
