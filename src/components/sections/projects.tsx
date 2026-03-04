@@ -66,7 +66,7 @@ export function Projects() {
         <div className="grid md:grid-cols-1 max-w-xl mx-auto gap-6">
           {projects.map((p, i) => (
             <RevealItem key={p.title} delay={i * 120}>
-              <div className="group rounded-2xl overflow-hidden bg-card/50 border border-border hover:border-border/200 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] transition-all duration-300">
+              <a href={p.link} target="_blank" rel="noopener noreferrer" className="block group rounded-2xl overflow-hidden bg-card/50 border border-border hover:border-border/200 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] transition-all duration-300 cursor-pointer">
                 <div className="relative aspect-[16/10] overflow-hidden bg-secondary">
                   <Image
                     src={p.image}
@@ -92,17 +92,12 @@ export function Projects() {
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     {p.desc}
                   </p>
-                  <a
-                    href={p.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-violet-light hover:text-neon-cyan hover:gap-2.5 transition-all"
-                  >
+                  <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent-violet-light group-hover:text-neon-cyan group-hover:gap-2.5 transition-all">
                     Перейти на сайт
                     <ArrowRight size={14} />
-                  </a>
+                  </span>
                 </div>
-              </div>
+              </a>
             </RevealItem>
           ))}
         </div>
