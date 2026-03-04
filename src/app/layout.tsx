@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Freelance.kg — Команда разработчиков",
+  title: "bizden.tech — IT-решения для бизнеса",
   description:
-    "Мы создаём стартапы и цифровые продукты. Команда из 4 разработчиков, которая превращает идеи в реальность.",
+    "Ваш надёжный IT-партнёр в Кыргызстане. Веб-разработка, мобильные приложения, кибербезопасность, IT-консалтинг и техническая поддержка.",
 };
 
 export default function RootLayout({
