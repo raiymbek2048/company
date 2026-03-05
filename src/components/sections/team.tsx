@@ -7,25 +7,25 @@ import CyberneticGridShader from "@/components/ui/cybernetic-grid-shader";
 const members = [
   {
     name: "Данияр уулу Райымбек",
-    role: "Глава отдела разработки",
+    role: "Development Lead",
     icon: Code,
     image: "",
   },
   {
     name: "Момунов Кадырмамат",
-    role: "Глава отдела кибербезопасности",
+    role: "ИБ Lead",
     icon: Shield,
     image: "",
   },
   {
     name: "Айдын Маметов",
-    role: "Глава отдела маркетинга",
+    role: "Marketing Lead",
     icon: LineChart,
     image: "",
   },
   {
     name: "Бексултан Кылычбек",
-    role: "Глава отдела HR и поддержки",
+    role: "HR & Support Lead",
     icon: Scale,
     image: "",
   },

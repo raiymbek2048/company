@@ -57,11 +57,25 @@ export function Navbar() {
         {open ? <X size={24} /> : <Menu size={24} />}
       </button>
 
+      {open && (
+        <div
+          className="fixed inset-0 bg-black/40 z-40 md:hidden"
+          onClick={() => setOpen(false)}
+        />
+      )}
+
       <div
-        className={`fixed top-0 right-0 w-72 h-dvh bg-background/97 backdrop-blur-xl border-l border-border flex flex-col items-center justify-center gap-8 transition-transform duration-500 md:hidden ${
+        className={`fixed top-0 right-0 w-72 h-dvh bg-background/97 backdrop-blur-xl border-l border-border flex flex-col items-center justify-center gap-8 transition-transform duration-500 md:hidden z-50 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
+        <button
+          className="absolute top-5 right-5 text-foreground p-1"
+          onClick={() => setOpen(false)}
+          aria-label="Закрыть"
+        >
+          <X size={24} />
+        </button>
         {links.map((link) => (
           <a
             key={link.href}
