@@ -143,12 +143,12 @@ export function Contact() {
                   Telegram
                 </span>
                 <a
-                  href="https://t.me/bizden_tech_bot"
+                  href="https://t.me/bizden_tech"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium hover:text-accent-violet-light transition-colors"
                 >
-                  @bizden_tech_bot
+                  @bizden_tech
                 </a>
               </div>
             </div>
