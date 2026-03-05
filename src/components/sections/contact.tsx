@@ -5,11 +5,41 @@ import { Mail, MapPin, Send, MessageCircle } from "lucide-react";
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 2500);
+    setSending(true);
+    setError("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+        form.reset();
+        setTimeout(() => setSubmitted(false), 3000);
+      } else {
+        setError("Ошибка отправки. Попробуйте позже.");
+      }
+    } catch {
+      setError("Ошибка сети. Попробуйте позже.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -31,17 +61,20 @@ export function Contact() {
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <input
               type="text"
+              name="name"
               placeholder="Ваше имя"
               required
               className="w-full px-5 py-4 bg-card border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/30 outline-none transition-all"
             />
             <input
               type="email"
+              name="email"
               placeholder="Email"
               required
               className="w-full px-5 py-4 bg-card border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/30 outline-none transition-all"
             />
             <textarea
+              name="message"
               placeholder="Расскажите о проекте"
               rows={5}
               required
@@ -57,6 +90,8 @@ export function Contact() {
             >
               {submitted ? (
                 "Отправлено!"
+              ) : sending ? (
+                "Отправка..."
               ) : (
                 <>
                   Отправить
@@ -64,6 +99,9 @@ export function Contact() {
                 </>
               )}
             </button>
+            {error && (
+              <p className="text-red-400 text-sm text-center">{error}</p>
+            )}
           </form>
 
           <div className="flex flex-col gap-4">
@@ -105,10 +143,12 @@ export function Contact() {
                   Telegram
                 </span>
                 <a
-                  href="#"
+                  href="https://t.me/bizden_tech_bot"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="font-medium hover:text-accent-violet-light transition-colors"
                 >
-                  @bizden_tech
+                  @bizden_tech_bot
                 </a>
               </div>
             </div>
